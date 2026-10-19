@@ -2,6 +2,25 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
+var mysql = require('mysql');
+
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
+  database: 'PaysG20'
+});
+
+connection.connect(function (err) {
+  if (err) {
+    console.error('Erreur de connexion à la base de données :', err.message);
+    return;
+  }
+  console.log('Vous êtes connecté à votre BDD...');
+});
+
+
+app.use('/pays', require('./routes/pays'));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.static('./public'));
