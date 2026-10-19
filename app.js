@@ -21,6 +21,12 @@ connection.connect(function (err) {
 
 
 app.use('/pays', require('./routes/pays'));
+app.use('/request1', require('./routes/request1'));
+app.use('/request2', require('./routes/request2'));
+app.use('/request3', require('./routes/request3'));
+app.use('/request4', require('./routes/request4'));
+app.use('/request5', require('./routes/request5'));
+app.use('/request6', require('./routes/request6'));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.static('./public'));
