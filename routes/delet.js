@@ -22,12 +22,12 @@ router.get('/', (req, res) => {
             return res.status(500).send('Erreur de base de données');
         }
 
-       
+
 
         res.render('pages/delet', {
-    title: 'suprimer un pays',
-    pays: pays
-});
+            title: 'suprimer un pays',
+            pays: pays
+        });
     });
 });
 
@@ -36,8 +36,8 @@ router.post('/', express.urlencoded({ extended: false }), (req, res) => {
     const values = [Pays];
 
     connection.query(
-            'DELETE FROM caracpays WHERE Pays = ?',
-            values,
+        'DELETE FROM caracpays WHERE Pays = ?',
+        values,
         (err) => {
             if (err) {
                 console.error(err);

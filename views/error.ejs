@@ -4,7 +4,22 @@
  @date 2026-10-20
  @brief Affiche le message et les details d'une erreur serveur.
  **/ %>
-<!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><title>Erreur</title></head><body>
-<h1><%= message %></h1><h2><%= error.status %></h2><pre><%= error.stack %></pre>
-</body></html>
+ <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Erreur</title>
+</head>
+
+<body>
+    <h1>
+        <%= message %>
+    </h1>
+    <h2>
+        <%= error.status %>
+    </h2>
+    <pre><%= error.stack %></pre>
+</body>
+
+</html>

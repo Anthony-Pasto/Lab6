@@ -5,7 +5,7 @@
  @date 2026-10-20
  @brief Affiche sous forme de tableau les pays transmis par une route.
  **/ %>
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -15,34 +15,49 @@
 <body>
     <%- include('../partials/header') %>
 
-    <main>
-        <h1>Liste des pays du G20</h1>
+        <main>
+            <h1>Liste des pays du G20</h1>
 
-        <table border="1">
-            <tr>
-                <th>Pays</th>
-                <th>Capitale</th>
-                <th>Population</th>
-                <th>PIB</th>
-                <th>Densité de population</th>
-                <th>Déjà visité</th>
-                <th>Commentaires</th>
-            </tr>
-
-            <% pays.forEach(p => { %>
+            <table border="1">
                 <tr>
-                    <td><%= p.Pays %></td>
-                    <td><%= p.Capitale %></td>
-                    <td><%= p.NbHab %></td>
-                    <td><%= p.PIB %></td>
-                    <td><%= p.DensitePop %></td>
-                    <td><%= p.dejaVisite %></td>
-                    <td><%= p.Commentaires %></td>
+                    <th>Pays</th>
+                    <th>Capitale</th>
+                    <th>Population</th>
+                    <th>PIB</th>
+                    <th>Densité de population</th>
+                    <th>Déjà visité</th>
+                    <th>Commentaires</th>
                 </tr>
-            <% }); %>
-        </table>
-    </main>
 
-    <%- include('../partials/footer') %>
+                <% pays.forEach(p=> { %>
+                    <tr>
+                        <td>
+                            <%= p.Pays %>
+                        </td>
+                        <td>
+                            <%= p.Capitale %>
+                        </td>
+                        <td>
+                            <%= p.NbHab %>
+                        </td>
+                        <td>
+                            <%= p.PIB %>
+                        </td>
+                        <td>
+                            <%= p.DensitePop %>
+                        </td>
+                        <td>
+                            <%= p.dejaVisite %>
+                        </td>
+                        <td>
+                            <%= p.Commentaires %>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </table>
+        </main>
+
+        <%- include('../partials/footer') %>
 </body>
+
 </html>

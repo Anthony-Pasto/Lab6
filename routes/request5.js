@@ -16,18 +16,18 @@ const connection = mysql.createConnection({
 });
 
 router.get('/', (req, res) => {
-    
-        connection.query( 'SELECT * FROM caracpays WHERE PIB > 1 ORDER BY PIB DESC LIMIT 1', (err, pays) => {
-        
+
+    connection.query('SELECT * FROM caracpays WHERE PIB > 1 ORDER BY PIB DESC LIMIT 1', (err, pays) => {
+
         if (err) {
             console.error(err);
             return res.status(500).send('Erreur de base de données');
         }
 
         res.render('pages/pays', {
-    title: 'Liste des pays du G20',
-    pays: pays
-});
+            title: 'Liste des pays du G20',
+            pays: pays
+        });
     });
 });
 

@@ -23,19 +23,19 @@ router.get('/', (req, res) => {
         }
 
         const prochainID = pays.reduce((maximum, paysActuel) => {
-            return Math.max(maximum, Number(paysActuel.id) );
+            return Math.max(maximum, Number(paysActuel.id));
         }, 0) + 1;
 
         res.render('pages/insert', {
-    title: 'ajouter un nouveau pays',
-    pays: pays,
-    prochainID: prochainID
-});
+            title: 'ajouter un nouveau pays',
+            pays: pays,
+            prochainID: prochainID
+        });
     });
 });
 
 router.post('/', express.urlencoded({ extended: false }), (req, res) => {
-    const {ID, Pays, Capitale, NbHab, PIB, DensitePop, dejaVisite, Commentaires } = req.body;
+    const { ID, Pays, Capitale, NbHab, PIB, DensitePop, dejaVisite, Commentaires } = req.body;
     const values = [ID, Pays, Capitale, NbHab, PIB, DensitePop, dejaVisite, Commentaires || null];
 
     connection.query(

@@ -16,17 +16,17 @@ const connection = mysql.createConnection({
 });
 
 router.get('/', (req, res) => {
-        connection.query( 'SELECT * FROM caracpays WHERE NbHab>100000000 AND DensitePop>100', (err, pays) => {
-        
+    connection.query('SELECT * FROM caracpays WHERE NbHab>100000000 AND DensitePop>100', (err, pays) => {
+
         if (err) {
             console.error(err);
             return res.status(500).send('Erreur de base de données');
         }
 
         res.render('pages/pays', {
-    title: 'Liste des pays du G20',
-    pays: pays
-});
+            title: 'Liste des pays du G20',
+            pays: pays
+        });
     });
 });
 

@@ -1,4 +1,3 @@
-
 <% /**
  @file views/pages/delet.ejs
  @author Anthony
@@ -15,44 +14,59 @@
 <body>
     <%- include('../partials/header') %>
 
-    <main>
-         <form action="/delete" method="post">
-            <div>
-                <label for="pays">Pays</label>
-                <input id="pays" name="Pays" type="text" pattern="[\p{L}\p{M} '-]+" required>
+        <main>
+            <form action="/delete" method="post">
+                <div>
+                    <label for="pays">Pays</label>
+                    <input id="pays" name="Pays" type="text" pattern="[\p{L}\p{M} '-]+" required>
 
-            </div>
-            <button type="submit">Supprimer le pays</button>
+                </div>
+                <button type="submit">Supprimer le pays</button>
 
 
-         </form>
-        <h1>Liste des pays du G20</h1>
+            </form>
+            <h1>Liste des pays du G20</h1>
 
-        <table border="1">
-            <tr>
-                <th>Pays</th>
-                <th>Capitale</th>
-                <th>Population</th>
-                <th>PIB</th>
-                <th>Densité de population</th>
-                <th>Déjà visité</th>
-                <th>Commentaires</th>
-            </tr>
-
-            <% pays.forEach(p => { %>
+            <table border="1">
                 <tr>
-                    <td><%= p.Pays %></td>
-                    <td><%= p.Capitale %></td>
-                    <td><%= p.NbHab %></td>
-                    <td><%= p.PIB %></td>
-                    <td><%= p.DensitePop %></td>
-                    <td><%= p.dejaVisite %></td>
-                    <td><%= p.Commentaires %></td>
+                    <th>Pays</th>
+                    <th>Capitale</th>
+                    <th>Population</th>
+                    <th>PIB</th>
+                    <th>Densité de population</th>
+                    <th>Déjà visité</th>
+                    <th>Commentaires</th>
                 </tr>
-            <% }); %>
-        </table>
-    </main>
 
-    <%- include('../partials/footer') %>
+                <% pays.forEach(p=> { %>
+                    <tr>
+                        <td>
+                            <%= p.Pays %>
+                        </td>
+                        <td>
+                            <%= p.Capitale %>
+                        </td>
+                        <td>
+                            <%= p.NbHab %>
+                        </td>
+                        <td>
+                            <%= p.PIB %>
+                        </td>
+                        <td>
+                            <%= p.DensitePop %>
+                        </td>
+                        <td>
+                            <%= p.dejaVisite %>
+                        </td>
+                        <td>
+                            <%= p.Commentaires %>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </table>
+        </main>
+
+        <%- include('../partials/footer') %>
 </body>
+
 </html>
