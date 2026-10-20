@@ -13,3 +13,5 @@ form div { margin-bottom: 15px; }
 label { display: block; margin-bottom: 5px; }
 input, textarea { box-sizing: border-box; padding: 8px; width: min(100%, 300px); }
 button { padding: 10px 20px; }
+table { border-collapse: collapse; }
+th, td { border: 1px solid #555; padding: 8px; }
