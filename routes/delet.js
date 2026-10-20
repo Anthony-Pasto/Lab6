@@ -1,3 +1,9 @@
+/**
+ @file routes/delet.js
+ @author Anthony
+ @date 2026-10-20
+ @brief Affiche les pays et traite leur suppression par nom.
+ **/
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');

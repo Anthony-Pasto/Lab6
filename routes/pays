@@ -1,3 +1,9 @@
+/**
+ @file routes/pays
+ @author Anthony
+ @date 2026-10-20
+ @brief Recupere et affiche la liste des pays.
+ **/
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');

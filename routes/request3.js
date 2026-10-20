@@ -1,3 +1,9 @@
+/**
+ @file routes/request3.js
+ @author Anthony
+ @date 2026-10-20
+ @brief Affiche les pays dont le nom commence par A et la capitale contient a.
+ **/
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');

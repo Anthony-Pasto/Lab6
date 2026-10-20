@@ -1,4 +1,9 @@
-/** @file app.js @author Anthony @brief Squelette Express et EJS */
+/**
+ @file app.js
+ @author Anthony
+ @date 2026-10-20
+ @brief Configure Express, MySQL, les routes et le demarrage du serveur.
+ **/
 const express = require('express');
 const app = express();
 const PORT = 3000;

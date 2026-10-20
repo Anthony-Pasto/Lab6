@@ -1,3 +1,9 @@
+/**
+ @file routes/request4.js
+ @author Anthony
+ @date 2026-10-20
+ @brief Affiche les pays selon leur statut de visite et leurs indicateurs.
+ **/
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');

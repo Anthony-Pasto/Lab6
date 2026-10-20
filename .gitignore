@@ -1,2 +1,9 @@
+
+# /**
+# @file .gitignore
+# @author Anthony
+# @date 2026-10-20
+# @brief Indique les fichiers locaux et dependances a ignorer par Git.
+# **/
 node_modules/
 .env

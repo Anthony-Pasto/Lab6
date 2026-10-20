@@ -1,3 +1,9 @@
+/**
+ @file routes/request2.js
+ @author Anthony
+ @date 2026-10-20
+ @brief Affiche les pays visites avec un PIB ou une population eleves.
+ **/
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');

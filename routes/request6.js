@@ -1,3 +1,9 @@
+/**
+ @file routes/request6.js
+ @author Anthony
+ @date 2026-10-20
+ @brief Affiche le pays avec la plus petite population positive.
+ **/
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');

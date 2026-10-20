@@ -1,3 +1,9 @@
+/**
+ @file routes/request5.js
+ @author Anthony
+ @date 2026-10-20
+ @brief Affiche le pays avec le PIB le plus eleve.
+ **/
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');

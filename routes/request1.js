@@ -1,3 +1,9 @@
+/**
+ @file routes/request1.js
+ @author Anthony
+ @date 2026-10-20
+ @brief Affiche les pays de plus de 100 millions d'habitants et de forte densite.
+ **/
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');

@@ -1,3 +1,9 @@
+/**
+ @file routes/insert.js
+ @author Anthony
+ @date 2026-10-20
+ @brief Affiche le formulaire et ajoute un pays dans la base de donnees.
+ **/
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');

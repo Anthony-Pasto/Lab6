@@ -1,3 +1,9 @@
+<!-- /**
+ @file README.md
+ @author Anthony
+ @date 2026-10-20
+ @brief Documente le demarrage et l'organisation du projet.
+ **/ -->
 # Squelette Express et EJS
 
 ## Démarrer

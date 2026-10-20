@@ -1,3 +1,9 @@
+/**
+ @file Requet.sql
+ @author Anthony
+ @date 2026-10-20
+ @brief Contient les six requetes SQL de recherche sur les pays.
+ **/
 -- Question 1
 SELECT * FROM caracpays
 WHERE NbHab>100000000 AND DensitePop>100;
