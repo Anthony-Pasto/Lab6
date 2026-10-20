@@ -19,7 +19,8 @@ connection.connect(function (err) {
   console.log('Vous êtes connecté à votre BDD...');
 });
 
-
+app.use('/insert', require('./routes/insert'));
+app.use('/delete', require('./routes/delet'));
 app.use('/pays', require('./routes/pays'));
 app.use('/request1', require('./routes/request1'));
 app.use('/request2', require('./routes/request2'));
@@ -33,7 +34,6 @@ app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(require('./routes/index'));
-app.use('/contacts', require('./routes/contacts'));
 app.use((req, res) => res.status(404).render('pages/404', { title: 'Page introuvable' }));
 app.use((err, req, res, next) => {
   res.locals.message = err.message;
