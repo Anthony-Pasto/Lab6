@@ -14,6 +14,15 @@
     <%- include('../partials/header') %>
 
         <main>
+            <% if (success === "true") { %>
+                <hr>
+                <strong>Opération réussie !</strong>
+                <hr>
+            <% } else if (success === "false") { %>
+                <hr>
+                <strong>Opération échouée !</strong>
+                <hr>
+            <% } %>
             <form action="/delete" method="post">
                 <div>
                     <label for="pays">Pays</label>

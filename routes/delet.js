@@ -16,6 +16,8 @@ const connection = mysql.createConnection({
 });
 
 router.get('/', (req, res) => {
+    const success = req.query.success;
+    
     connection.query('SELECT * FROM caracpays', (err, pays) => {
         if (err) {
             console.error(err);
@@ -26,7 +28,8 @@ router.get('/', (req, res) => {
 
         res.render('pages/delet', {
             title: 'suprimer un pays',
-            pays: pays
+            pays: pays,
+            success: success
         });
     });
 });
@@ -38,12 +41,18 @@ router.post('/', express.urlencoded({ extended: false }), (req, res) => {
     connection.query(
         'DELETE FROM caracpays WHERE Pays = ?',
         values,
-        (err) => {
+        (err, results) => {
             if (err) {
                 console.error(err);
-                return res.status(500).send("Impossible de supprimer ce pays de la base de données.");
+                return res.status(500).send("Erreur de base de données.");
             }
-            res.redirect('/delete');
+            // Si aucune ligne n'a été supprimée, le pays n'existait pas
+            if (results.affectedRows === 0) {
+                return res.redirect('/delete?success=false');
+            }
+
+            // Sinon, suppression réussie
+            res.redirect('/delete?success=true');
         }
     );
 });
