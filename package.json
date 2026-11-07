@@ -2,12 +2,21 @@
   "name": "squelette-express",
   "version": "1.0.0",
   "description": "Squelette Node.js Express EJS",
+  "homepage": "https://github.com/Anthony-Pasto/Lab6#readme",
+  "bugs": {
+    "url": "https://github.com/Anthony-Pasto/Lab6/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anthony-Pasto/Lab6.git"
+  },
+  "license": "ISC",
+  "author": "Anthony",
+  "type": "commonjs",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "Anthony",
-  "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.1.0",
