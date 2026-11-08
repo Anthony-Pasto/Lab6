@@ -1,19 +1,12 @@
 /**
- @file routes/delet.js
+ @file routes/delete.js
  @author Anthony
  @date 2026-10-20
  @brief Affiche les pays et traite leur suppression par nom.
  **/
 const express = require('express');
 const router = express.Router();
-const mysql = require('mysql');
-
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'PaysG20'
-});
+const connection = require('../models/db'); // C1 : connexion MySQL partagée
 
 router.get('/', (req, res) => {
     connection.query('SELECT * FROM caracpays', (err, pays) => {
@@ -24,9 +17,10 @@ router.get('/', (req, res) => {
 
 
 
-        res.render('pages/delet', {
+        res.render('pages/delete', { // D3 : nom du fichier corriger
             title: 'suprimer un pays',
-            pays: pays
+            pays: pays,
+            erreur: req.query.erreur === '1' // B3 : indique si aucun pays n'a été trouvé
         });
     });
 });
@@ -38,11 +32,12 @@ router.post('/', express.urlencoded({ extended: false }), (req, res) => {
     connection.query(
         'DELETE FROM caracpays WHERE Pays = ?',
         values,
-        (err) => {
+        (err, resultat) => {
             if (err) {
                 console.error(err);
                 return res.status(500).send("Impossible de supprimer ce pays de la base de données.");
             }
+            if (resultat.affectedRows === 0) return res.redirect('/delete?erreur=1'); // B3 : pays inexistant
             res.redirect('/delete');
         }
     );
