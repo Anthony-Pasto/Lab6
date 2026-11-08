@@ -1,0 +1,23 @@
+/**
+ @file Requet.sql
+ @author Anthony
+ @date 2026-10-20
+ @brief Contient les six requetes SQL de recherche sur les pays.
+ **/
+-- Question 1
+SELECT * FROM `paysg20`.`caracpays` WHERE NbHab>100000000 AND DensitePop>100;
+
+-- Question 2
+SELECT * FROM `paysg20`.`caracpays` WHERE dejaVisite='O' AND (PIB>2000 OR NbHab> 300000000);
+
+-- Question 3
+SELECT * FROM `paysg20`.`caracpays` WHERE Capitale LIKE '%a%' and Pays LIKE 'A%';
+
+-- Question 4
+SELECT * FROM `paysg20`.`caracpays` WHERE (dejaVisite='N' and (PIB IS NULL or DensitePop<50)) or dejaVisite='O' and NbHab<50000000 ;
+
+-- Question 5
+SELECT * FROM `paysg20`.`caracpays` WHERE PIB > 1 ORDER BY PIB DESC LIMIT 1;
+
+-- Question 6
+SELECT * FROM `paysg20`.`caracpays` WHERE NbHab > 1 ORDER BY NbHab LIMIT 1;

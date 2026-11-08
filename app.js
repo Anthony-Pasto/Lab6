@@ -7,14 +7,7 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
-var mysql = require('mysql');
-
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'PaysG20'
-});
+const connection = require('./models/db'); // C1 : connexion MySQL partagée
 
 connection.connect(function (err) {
   if (err) {
@@ -25,7 +18,7 @@ connection.connect(function (err) {
 });
 
 app.use('/insert', require('./routes/insert'));
-app.use('/delete', require('./routes/delet'));
+app.use('/delete', require('./routes/delete')); // D3 : nom du fichier corrigé
 app.use('/pays', require('./routes/pays'));
 app.use('/request1', require('./routes/request1'));
 app.use('/request2', require('./routes/request2'));

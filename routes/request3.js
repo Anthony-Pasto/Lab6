@@ -6,14 +6,7 @@
  **/
 const express = require('express');
 const router = express.Router();
-const mysql = require('mysql');
-
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'PaysG20'
-});
+const connection = require('../models/db'); // C1 : connexion MySQL partagée
 
 router.get('/', (req, res) => {
 
